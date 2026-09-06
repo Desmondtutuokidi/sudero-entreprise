@@ -1,264 +1,833 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Su.De.Ro-Enterprise | Document Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Su.De.Ro-Enterprise | Document Solutions</title>
+
+  <meta name="description" content="Su.De.Ro-Enterprise provides professional CVs, academic documents, invoices, flyers, printing and custom document solutions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #172033;
+      background: #f7f9fc;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      background: #071a3d;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #f5b700;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f5b700;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #071a3d, #123b75);
+      color: white;
+      padding: 90px 20px;
+    }
+
+    .hero-content {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      max-width: 750px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #f5b700;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      color: #e4eaf5;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f5b700;
+      color: #071a3d;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn:hover {
+      background: #ffffff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 75px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #071a3d;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #667085;
+      font-size: 17px;
+    }
+
+    /* SERVICES */
+    .services {
+      background: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid #e4e8ef;
+      box-shadow: 0 8px 25px rgba(15, 35, 70, 0.07);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(15, 35, 70, 0.12);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #071a3d;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #667085;
+    }
+
+    /* WHY US */
+    .why {
+      background: #eef3f9;
+    }
+
+    /* ABOUT */
+    .about-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-box h2 {
+      font-size: 36px;
+      color: #071a3d;
+      margin-bottom: 20px;
+    }
+
+    .about-box p {
+      color: #566174;
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+
+    .highlight {
+      background: #071a3d;
+      color: white;
+      padding: 35px;
+      border-radius: 15px;
+    }
+
+    .highlight h3 {
+      color: #f5b700;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .highlight p {
+      color: #e4eaf5;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info h3 {
+      color: #071a3d;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #071a3d;
+    }
+
+    .contact-item a {
+      color: #123b75;
+    }
+
+    form {
+      background: #f7f9fc;
+      padding: 30px;
+      border-radius: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccd3df;
+      border-radius: 7px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background: #071a3d;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #123b75;
+    }
+
+    /* CTA */
+    .cta {
+      background: #071a3d;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #dce5f3;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #041127;
+      color: #cbd5e1;
+      padding: 45px 20px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #cbd5e1;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    footer a:hover {
+      color: #f5b700;
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #26344f;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #25D366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      z-index: 2000;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-text">Su.De.Ro</span>
-                <span class="logo-subtitle">Enterprise</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+
+      <div class="logo">
+        Su.De.Ro<span>-Enterprise</span>
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>
+        Document Solutions for a
+        <span>Brighter Tomorrow</span>
+      </h1>
+
+      <p>
+        Professional CVs, academic documents, invoices,
+        flyers, printing and custom document solutions
+        for individuals and businesses.
+      </p>
+
+      <a class="btn" href="#contact">Get Started Today</a>
+
+      <a class="btn btn-outline" href="#services">
+        View Our Services
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>More Than Documents — We Build Opportunities</p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <div class="icon">📄</div>
+          <h3>Curriculum Vitae</h3>
+          <p>
+            Professional CVs that showcase your skills,
+            experience and achievements to impress employers.
+          </p>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Document Solutions for a Brighter Tomorrow</h1>
-            <p>Professional curriculum vitae, academic documents, invoices, flyers, and more</p>
-            <a href="#contact" class="btn btn-primary">Get Started Today</a>
+        <div class="card">
+          <div class="icon">🎓</div>
+          <h3>Academic Documents</h3>
+          <p>
+            Comprehensive academic materials including
+            certificates, transcripts and other documents.
+          </p>
         </div>
-        <div class="hero-image">
-            <div class="hero-circle">
-                <i class="fas fa-file-alt"></i>
-            </div>
+
+        <div class="card">
+          <div class="icon">🧾</div>
+          <h3>Invoices</h3>
+          <p>
+            Professional invoices tailored to your
+            business needs.
+          </p>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-subtitle">More Than Documents — We Build Opportunities</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3>Curriculum Vitae</h3>
-                    <p>Professional CVs that showcase your skills and experience to impress employers</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Academic Documents</h3>
-                    <p>Comprehensive academic materials including certificates, transcripts, and more</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-receipt"></i>
-                    </div>
-                    <h3>Invoices</h3>
-                    <p>Professional invoices tailored for your business needs</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-                    <h3>Flyers</h3>
-                    <p>Eye-catching promotional flyers to market your brand effectively</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <h3>Printing Services</h3>
-                    <p>High-quality printing and delivery for all your document needs</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-scroll"></i>
-                    </div>
-                    <h3>Custom Documents</h3>
-                    <p>Tailored document solutions for your unique business requirements</p>
-                </div>
-            </div>
+        <div class="card">
+          <div class="icon">📢</div>
+          <h3>Flyers</h3>
+          <p>
+            Eye-catching promotional flyers designed to
+            market your brand effectively.
+          </p>
         </div>
-    </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="features">
-        <div class="container">
-            <h2>Why Choose Us</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Fast Service</h3>
-                    <p>Quick turnaround without compromising quality</p>
-                </div>
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Reliable</h3>
-                    <p>Consistent, dependable service you can count on</p>
-                </div>
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Professional</h3>
-                    <p>Expert quality crafted by experienced professionals</p>
-                </div>
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-smile"></i>
-                    </div>
-                    <h3>Customer Satisfaction</h3>
-                    <p>Your satisfaction is our top priority</p>
-                </div>
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Global Reach</h3>
-                    <p>Serving individuals and businesses locally and globally</p>
-                </div>
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Creative Solutions</h3>
-                    <p>Ideas, documents, opportunities tailored just for you</p>
-                </div>
-            </div>
+        <div class="card">
+          <div class="icon">🖨️</div>
+          <h3>Printing Services</h3>
+          <p>
+            High-quality printing and delivery for your
+            document and business needs.
+          </p>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Su.De.Ro-Enterprise</h2>
-                    <p>Founded and led by Desmond Tutu Okidi, Su.De.Ro-Enterprise is dedicated to providing exceptional document solutions that exceed expectations.</p>
-                    <p>With a commitment to quality, speed, and professionalism, we transform your ideas into polished, professional documents that make an impact.</p>
-                    <p><strong>"Your Documents, Our Priority."</strong></p>
-                </div>
-                <div class="about-mission">
-                    <h3>Our Mission</h3>
-                    <p>To deliver high-quality document solutions that empower individuals and businesses to present themselves professionally and achieve their goals.</p>
-                </div>
-            </div>
+        <div class="card">
+          <div class="icon">💼</div>
+          <h3>Custom Documents</h3>
+          <p>
+            Tailored document solutions designed around
+            your unique requirements.
+          </p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="section-subtitle">We're ready to help you with your document needs</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+971 559930965</p>
-                            <p>+256 774725601</p>
-                        </div>
-                    </div>
+      </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p><a href="mailto:desmondtutuokidi3@gmail.com">desmondtutuokidi3@gmail.com</a></p>
-                        </div>
-                    </div>
+    </div>
+  </section>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Service Area</h3>
-                            <p>Serving Individuals & Businesses</p>
-                            <p>Locally & Globally</p>
-                        </div>
-                    </div>
-                </div>
 
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Tell us about your project" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
+  <!-- WHY CHOOSE US -->
+  <section class="why">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
+        <p>Professional service you can depend on</p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>Fast Service</h3>
+          <p>
+            Quick turnaround without compromising
+            quality.
+          </p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Su.De.Ro-Enterprise</h3>
-                    <p>Document Solutions for a Brighter Tomorrow</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Su.De.Ro-Enterprise. All rights reserved. | Ideas | Documents | Opportunities</p>
-            </div>
+        <div class="card">
+          <div class="icon">✓</div>
+          <h3>Reliable</h3>
+          <p>
+            Consistent and dependable service you
+            can count on.
+          </p>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Professional</h3>
+          <p>
+            Expert-quality documents crafted with
+            care and attention to detail.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">😊</div>
+          <h3>Customer Satisfaction</h3>
+          <p>
+            Your satisfaction is our top priority.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h3>Global Reach</h3>
+          <p>
+            Serving individuals and businesses locally
+            and globally.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💡</div>
+          <h3>Creative Solutions</h3>
+          <p>
+            Ideas, documents and opportunities tailored
+            just for you.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="container">
+
+      <div class="about-box">
+
+        <div>
+          <h2>About Su.De.Ro-Enterprise</h2>
+
+          <p>
+            Founded and led by Desmond Tutu Okidi,
+            Su.De.Ro-Enterprise is dedicated to providing
+            exceptional document solutions that exceed
+            expectations.
+          </p>
+
+          <p>
+            With a commitment to quality, speed and
+            professionalism, we transform your ideas into
+            polished, professional documents that make
+            an impact.
+          </p>
+
+          <p>
+            <strong>"Your Documents, Our Priority."</strong>
+          </p>
+        </div>
+
+        <div class="highlight">
+
+          <h3>Our Mission</h3>
+
+          <p>
+            To deliver high-quality document solutions
+            that empower individuals and businesses to
+            present themselves professionally and create
+            new opportunities.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CALL TO ACTION -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>Need a Professional Document?</h2>
+
+      <p>
+        Tell us what you need and let Su.De.Ro-Enterprise
+        help bring your ideas to life.
+      </p>
+
+      <a class="btn" href="#contact">
+        Contact Us Today
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+          We're ready to help you with your document needs.
+        </p>
+
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+
+          <h3>Contact Information</h3>
+
+          <div class="contact-item">
+            <strong>📞 Phone</strong>
+            <a href="tel:+971559930965">
+              +971 55 993 0965
+            </a>
+            <br>
+            <a href="tel:+256774725601">
+              +256 774 725 601
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <strong>📧 Email</strong>
+            <a href="mailto:desmondtutuokidi3@gmail.com">
+              desmondtutuokidi3@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <strong>📍 Service Area</strong>
+            Serving Individuals & Businesses
+            <br>
+            Locally & Globally
+          </div>
+
+          <a
+            class="btn"
+            href="https://wa.me/971559930965"
+            target="_blank">
+            💬 Chat on WhatsApp
+          </a>
+
+        </div>
+
+
+        <form
+          action="mailto:desmondtutuokidi3@gmail.com"
+          method="post"
+          enctype="text/plain">
+
+          <h3>Send Us a Message</h3>
+
+          <br>
+
+          <input
+            type="text"
+            name="Name"
+            placeholder="Your Name"
+            required>
+
+          <input
+            type="email"
+            name="Email"
+            placeholder="Your Email"
+            required>
+
+          <textarea
+            name="Message"
+            placeholder="Tell us about your project"
+            required></textarea>
+
+          <button type="submit">
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Su.De.Ro-Enterprise</h3>
+
+        <p>
+          Document Solutions for a Brighter Tomorrow.
+        </p>
+
+        <br>
+
+        <p>
+          Ideas | Documents | Opportunities
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+
+        <a href="tel:+971559930965">
+          +971 55 993 0965
+        </a>
+
+        <a href="mailto:desmondtutuokidi3@gmail.com">
+          Email Us
+        </a>
+
+        <a
+          href="https://wa.me/971559930965"
+          target="_blank">
+          WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+
+      © 2026 Su.De.Ro-Enterprise.
+      All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/971559930965"
+    target="_blank"
+    aria-label="Chat on WhatsApp">
+
+    💬
+
+  </a>
+
 </body>
 </html>
